@@ -18,7 +18,7 @@ class Grafo {
 
   void addNo(int x, int y) {
     // Cria um novo Nó:
-    No novoNo = No('($x|$y)', {'x': x, 'y': y});
+    No novoNo = No('$x|$y', {'x': x, 'y': y});
 
     // Adiciona o Nó na Lista de Nós:
     Nos.add(novoNo);
@@ -49,6 +49,70 @@ class Grafo {
   }
 }
 
+class Hash {
+  final Map<int, List<ElementoHeap>> _hash = {};
+
+  int hashSize = 0;
+
+  int _hashFunction(int x, int y) {
+    return (x.abs() + y.abs()).abs() % hashSize;
+  }
+
+  void add(ElementoHeap noHeap) {
+    var x = noHeap.noId.split('|')[0];
+    var y = noHeap.noId.split('|')[1];
+
+    var pos = _hashFunction(int.parse(x), int.parse(y));
+
+    if (_hash[pos] == null) {
+      _hash[pos] = [];
+    }
+
+    _hash[pos]!.add(noHeap);
+  }
+
+  ElementoHeap? get(String id) {
+    var x = id.split('|')[0];
+    var y = id.split('|')[1];
+
+    var pos = _hashFunction(int.parse(x), int.parse(y));
+
+    for (var no in _hash[pos]!) {
+      if (no.noId == id) {
+        return no;
+      }
+    }
+
+    return null;
+  }
+
+  void remove(String id) {
+    var x = id.split('|')[0];
+    var y = id.split('|')[1];
+
+    var pos = _hashFunction(int.parse(x), int.parse(y));
+
+    for (var no in _hash[pos]!) {
+      if (no.noId == id) {
+        _hash[pos]?.remove(no);
+        break;
+      }
+    }
+  }
+
+  void printHash() {
+    for (var i = 0; i < hashSize; i++) {
+      print('Posição: $i');
+
+      if (_hash[i] != null) {
+        for (var no in _hash[i]!) {
+          print('No: ${no.noId}');
+        }
+      }
+    }
+  }
+}
+
 class ElementoHeap {
   // Custo da aresta:
   double distancia = double.infinity;
@@ -57,10 +121,10 @@ class ElementoHeap {
   final String noId;
 
   // Nó onde a aresta sai:
-  final noVindo;
+  String noVindo = "";
 
   // Construtor:
-  ElementoHeap(this.noId, this.noVindo);
+  ElementoHeap(this.noId);
 }
 
 class Heap {
@@ -70,14 +134,22 @@ class Heap {
   ElementoHeap? get verMenor => _heap.isEmpty ? null : _heap.first;
 
   // Adiciona um elemento
-  void inserir(String no, String vindo) {
-    ElementoHeap elemento = ElementoHeap(no, vindo);
+  void inserir(String no) {
+    ElementoHeap elemento = ElementoHeap(no);
 
     // Adiciona elemento
     _heap.add(elemento);
+  }
 
-    // Shift Up
-    _shiftUp(_heap.length - 1);
+  void atualizarElemento(String id, double distancia, String noVindo) {
+    // Procura o elemento
+    final elemento = _heap.firstWhere((elemento) => elemento.noId == id);
+
+    // Atualiza o elemento
+    elemento.distancia = distancia;
+    elemento.noVindo = noVindo;
+
+    _shiftUp(_heap.indexOf(elemento));
   }
 
   // Remove e retorna o menor elemento
@@ -87,7 +159,8 @@ class Heap {
     final ElementoHeap menorValor = _heap.first;
 
     // Substitui a raiz pelo último elemento e faz Heapfy
-    _heap[0] = _heap.removeLast();
+    _heap[0] = _heap.last;
+    _heap.removeLast();
 
     if (_heap.isNotEmpty) _heapfy(0);
 
@@ -160,4 +233,72 @@ class Heap {
 
   // Retorna a heap para visualizar
   List<ElementoHeap> get elementos => List.unmodifiable(_heap);
+}
+
+class Solution {
+  int minCostConnectPoints(List<List<int>> points) {
+    int custo = 0;
+
+    final Grafo grafo = Grafo();
+
+    // Adiciona os nós no grafo:
+    for (var point in points) {
+      grafo.addNo(point[0], point[1]);
+    }
+
+    final Heap heap = Heap();
+
+    // Adiciona todos nós no heap:
+    for (var no in grafo.Nos) {
+      heap.inserir(no.id);
+    }
+
+    // Adiciona todos os elementos no hash:
+    final Hash hash = Hash();
+
+    hash.hashSize = grafo.qntdNos;
+
+    for (var elemento in heap.elementos) {
+      hash.add(elemento);
+    }
+
+    // Enquanto a heap não estiver vazia:
+    while (heap.elementos.isNotEmpty) {
+      // Remove o menor elemento da heap e heapfy:
+      final ElementoHeap raizHeap = heap.removerMenor()!;
+
+      print('No: ${raizHeap.noId} \n Distância: ${raizHeap.distancia}');
+
+      if (raizHeap.distancia == double.infinity) {
+      } else {
+        custo += (raizHeap.distancia).toInt();
+      }
+
+      // Remove da heap também:
+      hash.remove(raizHeap.noId);
+
+      int x1 = int.parse(raizHeap.noId.split('|')[0]);
+      int y1 = int.parse(raizHeap.noId.split('|')[1]);
+
+      // Verifica a distância manhattan entre o nó e todos os outros nós:
+      for (ElementoHeap noVizinho in heap.elementos) {
+        // Se o nó for o mesmo, pula:
+        if (noVizinho.noId == raizHeap.noId) continue;
+
+        int x2 = int.parse(noVizinho.noId.split('|')[0]);
+        int y2 = int.parse(noVizinho.noId.split('|')[1]);
+
+        // Calcula a distância manhattan:
+        final int distancia = (x1 - x2).abs() + (y1 - y2).abs();
+
+        // Atualiza a distância do elemento do Nó vizinho:
+        if (distancia < noVizinho.distancia) {
+          heap.atualizarElemento(
+              noVizinho.noId, distancia.toDouble(), raizHeap.noId);
+        }
+      }
+    }
+
+    return custo;
+  }
 }
