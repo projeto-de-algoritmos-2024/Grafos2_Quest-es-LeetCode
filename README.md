@@ -11,7 +11,7 @@
 
 ## Sobre
 
-Tendo em vista a aplição do conteúdo Grafos 2 (que envolve a aprendizagem dos seguintes algoritmos: Dijkstra, Prim e Kruskal)na prática, foram resolvidas 4 questões do site [_LeetCode_](https://leetcode.com/). Para este módulo foram escolhidas duas questões de nível Difícil (**_Hard_**) e duas de nível Médio (**_Medium_**).
+Tendo em vista a aplição do conteúdo Grafos 2 (que envolve a aprendizagem dos seguintes algoritmos: Dijkstra, Prim e Kruskal) na prática, foram resolvidas 4 questões do site [_LeetCode_](https://leetcode.com/). Sendo elas, duas questões de nível Difícil (**_Hard_**) e duas de nível Médio (**_Medium_**).
 
 ## Linguagens
 
@@ -48,17 +48,17 @@ Tendo em vista a aplição do conteúdo Grafos 2 (que envolve a aprendizagem dos
 
 ## Uso 
 
-1. É necessário ter uma conta no _LeetCode_ e acessar uma das questões na tabela acima.
+1. É necessário ter uma conta no **_LeetCode_** e acessar uma das questões na tabela acima.
 
 2. Copiar a resposta da referida questão no repositório.
 
-3. Logo abaixo do título da aba _"Code"_, selecione a linguagem com a qual a solução disponível no repositório foi escrita.
+3. Logo abaixo do título da aba **_"Code"_**, selecione a linguagem com a qual a solução disponível no repositório foi escrita.
 
-4. Apague a definição de Classe que já vem escrita na IDE da aba _"Code"_ e cole a solução copiada anteriormente.
+4. Apague a definição de Classe que já vem escrita na IDE da aba **_"Code"_** e cole a solução copiada anteriormente.
 
-5. Clique em _"Run"_ na parte inferior da aba _"Code"_, para rodar os casos de teste e verificar se a solução está correta.
+5. Clique em **_"Run"_** na parte inferior da aba **_"Code"_**, para rodar os casos de teste e verificar se a solução está correta.
 
-6. Caso deseje ter mais certeza acerca da solução, clique em _"Submit"_, com isso uma grande quantidade de outros casos de teste serão verificados e retornará o resultado final informando se a resposta está correta ou não. O lado negativo dessa opção é que o _LeetCode_ salvará essa submissão na conta utilizada ao clicar em _"Submit"_.
+6. Caso deseje ter mais certeza acerca da solução, clique em **_"Submit"_**, com isso uma grande quantidade de outros casos de teste serão verificados e retornará o resultado final informando se a resposta está correta ou não. O lado negativo dessa opção é que o **_LeetCode_** salvará essa submissão na conta utilizada ao clicar em **_"Submit"_**.
 
 ## Screenshots
 

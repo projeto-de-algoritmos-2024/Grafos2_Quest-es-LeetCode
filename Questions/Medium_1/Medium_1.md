@@ -1,12 +1,12 @@
 # 1584. Min Cost to Connect All Points
 
-- **Link Questão:** [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/description/)
+### Link Questão: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/description/)
 
-- **Nível:** Médio
+#### Nível: Médio
 
-- **Linguagem utilizada:** Dart
+#### Linguagem utilizada: Dart
 
-<br>
+---
 
 ## Resultado Juiz Eletrônico (LeetCode)
 
@@ -28,9 +28,9 @@
 
 ## Solução
 
-- **Arquivo:** [1584.Min_Cost_to_Connect_All_Points.dart](./1584.Min_Cost_to_Connect_All_Points.dart)
+### Arquivo: [1584.Min_Cost_to_Connect_All_Points.dart](./1584.Min_Cost_to_Connect_All_Points.dart)
 
-### Código:
+### Código em Dart:
 
 ```dart
 class No {

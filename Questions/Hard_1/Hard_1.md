@@ -1,12 +1,12 @@
 # 1368. Minimum Cost to Make at Least One Valid Path in a Grid
 
-- **Link Questão:** [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/description/)
+### Link Questão: [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/description/)
 
-- **Nível:** Difícil
+#### Nível: Difícil
 
-- **Linguagem utilizada:** Dart
+#### Linguagem utilizada: Dart
 
-<br>
+---
 
 ## Resultado Juiz Eletrônico (LeetCode)
 
@@ -32,9 +32,9 @@
 
 ## Solução
 
-- **Arquivo:** [1368.Minimum_Cost_to_Make_at_Least_One_Valid_Path_in_a_Grid.dart](./1368.Minimum_Cost_to_Make_at_Least_One_Valid_Path_in_a_Grid.dart)
+### Arquivo: [1368.Minimum_Cost_to_Make_at_Least_One_Valid_Path_in_a_Grid.dart](./1368.Minimum_Cost_to_Make_at_Least_One_Valid_Path_in_a_Grid.dart)
 
-### Código:
+### Código em Dart:
 
 ```dart
 class No {
