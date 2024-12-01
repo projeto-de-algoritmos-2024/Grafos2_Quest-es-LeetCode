@@ -41,6 +41,32 @@ class Solution {
             if (time >= disappear[node]) {
                 continue;
             }
+            // Percorrer todos os vizinhos do nó atual
+            for (int[] neighbor : graph.get(node)) {
+                int neighborNode = neighbor[0]; // Nó vizinho
+                int weight = neighbor[1]; // Peso da aresta para o vizinho
+                int newTime = time + weight; // Tempo acumulado para alcançar o vizinho
+
+                // Se o novo tempo for menor que a distância atual e o vizinho ainda não desapareceu
+                if (newTime < distances[neighborNode] && newTime < disappear[neighborNode]) {
+                    distances[neighborNode] = newTime; // Atualizar a menor distância
+                    pq.offer(new int[]{newTime, neighborNode}); // Adicionar o vizinho à fila de prioridade
+                }
+            }
+        }
+
+        // Substituir distâncias inalcançáveis por -1
+        for (int i = 0; i < n; i++) {
+            if (distances[i] == Integer.MAX_VALUE) {
+                distances[i] = -1; // Se a distância ainda for "infinito", o nó é inalcançável
+            }
+        }
+
+        // 5. Retornar o array de distâncias
+        return distances;
+    }
+}
+
 
             
 
