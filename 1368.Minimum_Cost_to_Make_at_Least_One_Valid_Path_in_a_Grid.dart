@@ -122,13 +122,13 @@ class Heap {
 class Solution {
   // Direções de "movimento" possíveis:
   List<List<int>> direcoes = [
-    [0, 1],
-    [0, -1],
-    [1, 0],
-    [-1, 0]
+    [0, 1], // Direita
+    [0, -1], // Esquerda
+    [1, 0], // Baixo
+    [-1, 0] // Cima
   ];
 
-  void minCost(List<List<int>> grid) {
+  int minCost(List<List<int>> grid) {
     // Custo final:
     double custo = -1;
 
@@ -160,6 +160,27 @@ class Solution {
         custo = menorNo.distancia;
         break;
       }
+
+      // Verifica as direções possíveis:
+      for (int i = 0; i < direcoes.length; i++) {
+        int x = menorNo.x + direcoes[i][0];
+        int y = menorNo.y + direcoes[i][1];
+
+        // Verifica se está fora da Grid e pula essa iteração:
+        if (x < 0 || x >= linhas || y < 0 || y >= colunas) continue;
+
+        // Calcula o custo da distância (verifica se a direção do nó é a necessária):
+        double custoDistancia =
+            menorNo.distancia + (grid[menorNo.x][menorNo.y] == i + 1 ? 0 : 1);
+
+        // Atualiza a distância se for menor:
+        if (custoDistancia < distancias[x][y]) {
+          distancias[x][y] = custoDistancia;
+          heap.atualizarNo(x, y, custoDistancia);
+        }
+      }
     }
+
+    return custo.toInt();
   }
 }
