@@ -1,3 +1,42 @@
+# 1368. Minimum Cost to Make at Least One Valid Path in a Grid
+
+- **Link Questão:** [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/description/)
+
+- **Nível:** Difícil
+
+- **Linguagem utilizada:** Dart
+
+<br>
+
+## Resultado Juiz Eletrônico (LeetCode)
+
+<center> 
+
+![Resultado](../../assets/accepted_hard_1.png)
+
+![Resultado Detalhado](../../assets/details_hard_1.png)
+
+</center>
+
+## Resumo
+
+- O problema consiste em encontrar o menor caminho da posição **(0, 0)** até a posição **(m - 1, n - 1)**, de uma _grid_ (grade), ou seja, o menor caminho da primeira posição da primeira linha, até a ultima posição da ultima linha.
+
+- Cada posição da grade pode ser interpretada como um nó.
+
+- Esses nós estão ligados aos seus vizinhos das quatro direções (esquerda, direita, cima e baixo) por arestas, que possuem um custo.
+
+- Esses nós também possuem um valor que indica uma direção, percorrer para o vizinho desse nó na direção armazenada por ele não tem custo, mas percorrer para um vizinho em uma das outras direções tem custo 1.
+
+- Tendo isso em mente, é possível utilizar o algoritmo de Dijkstra para encontrar o menor caminho.
+
+## Solução
+
+- **Arquivo:** [1368.Minimum_Cost_to_Make_at_Least_One_Valid_Path_in_a_Grid.dart](./1368.Minimum_Cost_to_Make_at_Least_One_Valid_Path_in_a_Grid.dart)
+
+### Código:
+
+```dart
 class No {
   // Custo para atingir vindo de (0, 0):
   double distancia;
@@ -177,14 +216,4 @@ class Solution {
     return custo.toInt();
   }
 }
-
-void main() {
-  final solution = Solution();
-
-  print(solution.minCost([
-    [1, 1, 1, 1],
-    [2, 2, 2, 2],
-    [1, 1, 1, 1],
-    [2, 2, 2, 2]
-  ]));
-}
+```
