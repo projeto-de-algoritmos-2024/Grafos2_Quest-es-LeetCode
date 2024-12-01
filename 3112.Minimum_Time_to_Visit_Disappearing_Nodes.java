@@ -1,4 +1,5 @@
-import java.util.*; 
+import java.util.*; // Importamos as coleções necessárias (Map, List, PriorityQueue, etc.)
+
 class Solution {
     public int[] minimumTime(int n, int[][] edges, int[] disappear) {
         
@@ -16,6 +17,32 @@ class Solution {
             graph.get(u).add(new int[]{v, length}); // Adiciona o vizinho na lista de adjacência de u
             graph.get(v).add(new int[]{u, length}); // Adiciona o vizinho na lista de adjacência de v 
         }
-    
+
+
+        int[] distances = new int[n]; //  array que armazena a menor distância de 0 até cada nó.
+
+        Arrays.fill(distances, Integer.MAX_VALUE); //  Setando todas as distâncias como "infinito" (Integer.MAX_VALUE) porque ainda não foi calculado nenhum caminho.
+        distances[0] = 0;  // Definindo a distância para o nó inicial (0) como 0
+        
+        
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]); 
+        // Fila de prioridade para processar nós com base no menor tempo acumulado, [tempo acumulado, nó atual].
+        // O comparator `(a, b) -> a[0] - b[0]` garante que o nó com o menor tempo acumulado seja processado primeiro.
+
+        pq.offer(new int[]{0, 0}); // Adicionamos o nó inicial (0) com tempo acumulado 0 na fila.
+
+        // Processar os nós usando Dijkstra 
+        while (!pq.isEmpty()) {
+            int[] current = pq.poll(); // Pegamos o nó com o menor tempo acumulado
+            int time = current[0]; // Tempo acumulado até o nó atual
+            int node = current[1]; // Nó atual
+            
+            // Ignorar o nó se ele já desapareceu no tempo atual
+            if (time >= disappear[node]) {
+                continue;
+            }
+
+            
+
 
         
