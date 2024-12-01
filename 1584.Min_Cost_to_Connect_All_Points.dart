@@ -130,9 +130,6 @@ class ElementoHeap {
 class Heap {
   final List<ElementoHeap> _heap = [];
 
-  // Ver Raiz
-  ElementoHeap? get verMenor => _heap.isEmpty ? null : _heap.first;
-
   // Adiciona um elemento
   void inserir(String no) {
     ElementoHeap elemento = ElementoHeap(no);
@@ -253,29 +250,15 @@ class Solution {
       heap.inserir(no.id);
     }
 
-    // Adiciona todos os elementos no hash:
-    final Hash hash = Hash();
-
-    hash.hashSize = grafo.qntdNos;
-
-    for (var elemento in heap.elementos) {
-      hash.add(elemento);
-    }
-
     // Enquanto a heap não estiver vazia:
     while (heap.elementos.isNotEmpty) {
       // Remove o menor elemento da heap e heapfy:
       final ElementoHeap raizHeap = heap.removerMenor()!;
 
-      print('No: ${raizHeap.noId} \n Distância: ${raizHeap.distancia}');
-
       if (raizHeap.distancia == double.infinity) {
       } else {
         custo += (raizHeap.distancia).toInt();
       }
-
-      // Remove da heap também:
-      hash.remove(raizHeap.noId);
 
       int x1 = int.parse(raizHeap.noId.split('|')[0]);
       int y1 = int.parse(raizHeap.noId.split('|')[1]);
