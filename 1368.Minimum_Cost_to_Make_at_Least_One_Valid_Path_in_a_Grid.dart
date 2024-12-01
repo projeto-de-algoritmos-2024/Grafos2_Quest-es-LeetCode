@@ -1,5 +1,5 @@
 class No {
-  // Custo da aresta:
+  // Custo para atingir vindo de (0, 0):
   double distancia = double.infinity;
 
   // Posição X do nó:
@@ -28,7 +28,7 @@ class Heap {
 
   void atualizarNo(int x, int y, double distancia) {
     // Procura o no
-    final no = _heap.firstWhere((no) => no.x == x && no.y == y);
+    No no = _heap.firstWhere((no) => no.x == x && no.y == y);
 
     // Atualiza o no
     no.distancia = distancia;
@@ -136,19 +136,22 @@ class Solution {
     int linhas = grid.length;
     int colunas = grid[0].length;
 
-    // Matriz Distâncias (Vai ser nosso pseudo grafo):
+    // Matriz Distâncias:
     List<List<double>> distancias =
         List.generate(linhas, (_) => List.filled(colunas, double.infinity));
 
     // Heap:
     final Heap heap = Heap();
 
-    // Adiciona nos da Grid na Heap:
+    // Adiciona todos os nos da Grid na Heap:
     for (int i = 0; i < linhas; i++) {
       for (int j = 0; j < colunas; j++) {
         heap.inserir(i, j);
       }
     }
+
+    // Atualiza o nó inicial:
+    heap.atualizarNo(0, 0, 0.0);
 
     while (heap.nos.isNotEmpty) {
       // Pega o menor no e Heapfy:
@@ -156,9 +159,13 @@ class Solution {
 
       // Verifica se chegou na última posição da Grid:
       if (menorNo.x == linhas - 1 && menorNo.y == colunas - 1) {
-        // Atualiza o custo total:
-        custo = menorNo.distancia;
-        break;
+        if (menorNo.distancia == double.infinity)
+          custo = -1;
+        else {
+          // Atualiza o custo total:
+          custo = menorNo.distancia;
+          break;
+        }
       }
 
       // Verifica as direções possíveis:
@@ -173,14 +180,29 @@ class Solution {
         double custoDistancia =
             menorNo.distancia + (grid[menorNo.x][menorNo.y] == i + 1 ? 0 : 1);
 
-        // Atualiza a distância se for menor:
+        print(distancias.map((e) => e.toString()).join('\n'));
+
+        // Atualiza a distância se for menor e ShiftUp:
         if (custoDistancia < distancias[x][y]) {
           distancias[x][y] = custoDistancia;
-          heap.atualizarNo(x, y, custoDistancia);
+          if (heap.nos.any((element) => element.x == x && element.y == y)) {
+            heap.atualizarNo(x, y, custoDistancia);
+          }
         }
       }
     }
 
     return custo.toInt();
   }
+}
+
+void main() {
+  final solution = Solution();
+
+  print(solution.minCost([
+    [1, 1, 1, 1],
+    [2, 2, 2, 2],
+    [1, 1, 1, 1],
+    [2, 2, 2, 2]
+  ]));
 }
