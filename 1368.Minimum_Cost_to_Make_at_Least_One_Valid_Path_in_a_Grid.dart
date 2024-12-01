@@ -1,55 +1,54 @@
-class ElementoHeap {
+class No {
   // Custo da aresta:
   double distancia = double.infinity;
 
-  // Nó onde a aresta chega:
-  final String noId;
+  // Posição X do nó:
+  final int x;
 
-  // Nó onde a aresta sai:
-  String noVindo = "";
+  // Posição Y do nó:
+  final int y;
 
   // Construtor:
-  ElementoHeap(this.noId);
+  No(this.x, this.y);
 }
 
 class Heap {
-  final List<ElementoHeap> _heap = [];
+  final List<No> _heap = [];
 
   // Ver Raiz
-  ElementoHeap? get verMenor => _heap.isEmpty ? null : _heap.first;
+  No? get verMenor => _heap.isEmpty ? null : _heap.first;
 
-  // Adiciona um elemento
-  void inserir(String no) {
-    ElementoHeap elemento = ElementoHeap(no);
+  // Adiciona um no
+  void inserir(int x, int y) {
+    No no = No(x, y);
 
-    // Adiciona elemento
-    _heap.add(elemento);
+    // Adiciona no
+    _heap.add(no);
   }
 
-  void atualizarElemento(String id, double distancia, String noVindo) {
-    // Procura o elemento
-    final elemento = _heap.firstWhere((elemento) => elemento.noId == id);
+  void atualizarNo(int x, int y, double distancia) {
+    // Procura o no
+    final no = _heap.firstWhere((no) => no.x == x && no.y == y);
 
-    // Atualiza o elemento
-    elemento.distancia = distancia;
-    elemento.noVindo = noVindo;
+    // Atualiza o no
+    no.distancia = distancia;
 
-    _shiftUp(_heap.indexOf(elemento));
+    _shiftUp(_heap.indexOf(no));
   }
 
-  // Remove e retorna o menor elemento
-  ElementoHeap? removerMenor() {
+  // Remove e retorna o menor no
+  No? removerMenor() {
     if (_heap.isEmpty) return null;
 
-    final ElementoHeap menorValor = _heap.first;
+    final No menorValor = _heap.first;
 
-    // Substitui a raiz pelo último elemento e faz Heapfy
+    // Substitui a raiz pelo último no e faz Heapfy
     _heap[0] = _heap.last;
     _heap.removeLast();
 
     if (_heap.isNotEmpty) _heapfy(0);
 
-    // Retorna o menor elemento
+    // Retorna o menor no
     return menorValor;
   }
 
@@ -109,7 +108,7 @@ class Heap {
     }
   }
 
-  // Troca dois Elementos
+  // Troca dois Nos
   void _swap(int a, int b) {
     final temp = _heap[a];
     _heap[a] = _heap[b];
@@ -117,7 +116,7 @@ class Heap {
   }
 
   // Retorna a heap para visualizar
-  List<ElementoHeap> get elementos => List.unmodifiable(_heap);
+  List<No> get nos => List.unmodifiable(_heap);
 }
 
 class Solution {
@@ -129,5 +128,38 @@ class Solution {
     [-1, 0]
   ];
 
-  void minCost(List<List<int>> grid) {}
+  void minCost(List<List<int>> grid) {
+    // Custo final:
+    double custo = -1;
+
+    // Tamanho da Grid:
+    int linhas = grid.length;
+    int colunas = grid[0].length;
+
+    // Matriz Distâncias (Vai ser nosso pseudo grafo):
+    List<List<double>> distancias =
+        List.generate(linhas, (_) => List.filled(colunas, double.infinity));
+
+    // Heap:
+    final Heap heap = Heap();
+
+    // Adiciona nos da Grid na Heap:
+    for (int i = 0; i < linhas; i++) {
+      for (int j = 0; j < colunas; j++) {
+        heap.inserir(i, j);
+      }
+    }
+
+    while (heap.nos.isNotEmpty) {
+      // Pega o menor no e Heapfy:
+      final No menorNo = heap.removerMenor()!;
+
+      // Verifica se chegou na última posição da Grid:
+      if (menorNo.x == linhas - 1 && menorNo.y == colunas - 1) {
+        // Atualiza o custo total:
+        custo = menorNo.distancia;
+        break;
+      }
+    }
+  }
 }
