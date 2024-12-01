@@ -1,6 +1,6 @@
 class No {
   // Custo para atingir vindo de (0, 0):
-  double distancia = double.infinity;
+  double distancia;
 
   // Posição X do nó:
   final int x;
@@ -9,7 +9,7 @@ class No {
   final int y;
 
   // Construtor:
-  No(this.x, this.y);
+  No(this.x, this.y, this.distancia);
 }
 
 class Heap {
@@ -19,21 +19,14 @@ class Heap {
   No? get verMenor => _heap.isEmpty ? null : _heap.first;
 
   // Adiciona um no
-  void inserir(int x, int y) {
-    No no = No(x, y);
+  void inserir(int x, int y, double distancia) {
+    No no = No(x, y, distancia);
 
     // Adiciona no
     _heap.add(no);
-  }
 
-  void atualizarNo(int x, int y, double distancia) {
-    // Procura o no
-    No no = _heap.firstWhere((no) => no.x == x && no.y == y);
-
-    // Atualiza o no
-    no.distancia = distancia;
-
-    _shiftUp(_heap.indexOf(no));
+    // ShiftUp
+    _shiftUp(_heap.length - 1);
   }
 
   // Remove e retorna o menor no
@@ -143,15 +136,8 @@ class Solution {
     // Heap:
     final Heap heap = Heap();
 
-    // Adiciona todos os nos da Grid na Heap:
-    for (int i = 0; i < linhas; i++) {
-      for (int j = 0; j < colunas; j++) {
-        heap.inserir(i, j);
-      }
-    }
-
-    // Atualiza o nó inicial:
-    heap.atualizarNo(0, 0, 0.0);
+    // Adiciona o nó inicial:
+    heap.inserir(0, 0, 0.0);
 
     while (heap.nos.isNotEmpty) {
       // Pega o menor no e Heapfy:
@@ -180,14 +166,10 @@ class Solution {
         double custoDistancia =
             menorNo.distancia + (grid[menorNo.x][menorNo.y] == i + 1 ? 0 : 1);
 
-        print(distancias.map((e) => e.toString()).join('\n'));
-
-        // Atualiza a distância se for menor e ShiftUp:
+        // Adiciona na heap:
         if (custoDistancia < distancias[x][y]) {
           distancias[x][y] = custoDistancia;
-          if (heap.nos.any((element) => element.x == x && element.y == y)) {
-            heap.atualizarNo(x, y, custoDistancia);
-          }
+          heap.inserir(x, y, custoDistancia);
         }
       }
     }
