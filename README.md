@@ -76,8 +76,8 @@ Dispiníveis no `.md` de cada questão. Seguem os links:
 
 - **Questão Média 1:** [1584. Min Cost to Connect All Points](https://youtu.be/CHJT2zVBHEk)
 
-- **Questão Média 2:** [3112. Minimum Time to Visit Disappearing Nodes](<!-- LINK DO VÍDEO -->)
+- **Questão Média 2:** [3112. Minimum Time to Visit Disappearing Nodes](https://youtu.be/mKC41ZRdx-o?si=SJjZ58UGsaENvHlu&t=2)
 
 - **Questão Difícil 1:** [1368. Minimum Cost to Make at Least One Valid Path in a Grid](<!-- LINK DO VÍDEO -->)
 
-- **Questão Difícil 2:** [778. Swim in Rising Water](<!-- LINK DO VÍDEO -->)
+- **Questão Difícil 2:** [778. Swim in Rising Water](https://youtu.be/mKC41ZRdx-o?si=6LDgxcuA8GRPbRne&t=315)
