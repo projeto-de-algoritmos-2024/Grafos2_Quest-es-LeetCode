@@ -74,23 +74,35 @@ Os Links nos títulos levam ao `.md` com detalhes acerca da solução de cada qu
 
 ### [1584. Min Cost to Connect All Points](./Questions/Medium_1/Medium_1.md)
 
+<center>
+
 ![1584. Min Cost to Connect All Points](./assets/details_medium_1.png)
 
+</center>
 
 ### [3112. Minimum Time to Visit Disappearing Nodes](./Questions/Medium_2/Medium_2.md)
 
+<center>
+
 ![3112. Minimum Time to Visit Disappearing Nodes](./assets/details_medium2.png)
 
+</center>
 
 ### [1368. Minimum Cost to Make at Least One Valid Path in a Grid](./Questions/Hard_1/Hard_1.md)
 
+<center>
+
 ![1368. Minimum Cost to Make at Least One Valid Path in a Grid](./assets/details_hard_1.png)
 
+</center>
 
 ### [778. Swim in Rising Water](./Questions/Hard_2/Hard_2.md)
 
+<center>
+
 ![778. Swim in Rising Water](./assets/details_hard2.png)
 
+</center>
 
 ## Vídeos Explicando as Questões
 
@@ -98,6 +110,6 @@ Os Links nos títulos levam ao `.md` com detalhes acerca da solução de cada qu
 
 - ### Questão Média 2: [3112. Minimum Time to Visit Disappearing Nodes](https://youtu.be/mKC41ZRdx-o?si=SJjZ58UGsaENvHlu&t=2)
 
-- ### Questão Difícil 1: [1368. Minimum Cost to Make at Least One Valid Path in a Grid](<!-- LINK DO VÍDEO -->)
+- ### Questão Difícil 1: [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://youtu.be/1jAT_2F0BrI)
 
 - ### Questão Difícil 2: [778. Swim in Rising Water](https://youtu.be/mKC41ZRdx-o?si=6LDgxcuA8GRPbRne&t=315)
