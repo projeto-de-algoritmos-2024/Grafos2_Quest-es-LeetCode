@@ -11,7 +11,7 @@
 
 ## Sobre
 
-Tendo em vista a aplição do conteúdo Grafos 2 (que envolve a aprendizagem dos seguintes algoritmos: Dijkstra, Prim e Kruskal) na prática, foram resolvidas 4 questões do site [_LeetCode_](https://leetcode.com/). Sendo elas, duas questões de nível Difícil (**_Hard_**) e duas de nível Médio (**_Medium_**).
+Tendo em vista a aplição do conteúdo Grafos 2 (que envolve a aprendizagem dos seguintes algoritmos: Dijkstra, Prim e Kruskal) na prática, foram resolvidas 4 questões do site [LeetCode](https://leetcode.com/). Sendo elas, duas questões de nível Difícil (**_Hard_**) e duas de nível Médio (**_Medium_**).
 
 ## Linguagens
 
@@ -46,9 +46,11 @@ Tendo em vista a aplição do conteúdo Grafos 2 (que envolve a aprendizagem dos
 | Difícil | [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/description/) | Dart      |
 | Difícil | [778. Swim in Rising Water](https://leetcode.com/problems/swim-in-rising-water/description/)                                                                                                                 | Java      |
 
-## Uso 
+## Uso / Manual de como Rodar
 
-1. É necessário ter uma conta no **_LeetCode_** e acessar uma das questões na tabela acima.
+### Direto no LeetCode
+
+1. É necessário ter uma conta no **LeetCode** e acessar uma das questões na tabela acima.
 
 2. Copiar a resposta da referida questão no repositório.
 
@@ -58,26 +60,44 @@ Tendo em vista a aplição do conteúdo Grafos 2 (que envolve a aprendizagem dos
 
 5. Clique em **_"Run"_** na parte inferior da aba **_"Code"_**, para rodar os casos de teste e verificar se a solução está correta.
 
-6. Caso deseje ter mais certeza acerca da solução, clique em **_"Submit"_**, com isso uma grande quantidade de outros casos de teste serão verificados e retornará o resultado final informando se a resposta está correta ou não. O lado negativo dessa opção é que o **_LeetCode_** salvará essa submissão na conta utilizada ao clicar em **_"Submit"_**.
+6. Caso deseje ter mais certeza acerca da solução, clique em **_"Submit"_**, com isso uma grande quantidade de outros casos de teste serão verificados e retornará o resultado final informando se a resposta está correta ou não. O lado negativo dessa opção é que o **LeetCode** salvará essa submissão na conta utilizada ao clicar em **_"Submit"_**.
+
+### Alternativamente
+
+- É possível rodar as soluções facilmente em sites como o [DartPad](https://dartpad.dev/), para a linguagem Dart, e o [JDoodle](https://www.jdoodle.com/online-java-compiler) para a linguagem Java.
+
+- Vale ressaltar que sendo questões para o LeetCode, as soluções não possuem entrada de dados, sendo necessário modificar a solução para que a entrada de dados seja feita de forma manual. Ou seja, também não possuem o método `main()`. Tornando mais viável executá-las diretamente no LeetCode.
 
 ## Screenshots
 
-Dispiníveis no `.md` de cada questão. Seguem os links:
+Os Links nos títulos levam ao `.md` com detalhes acerca da solução de cada questão.
 
-[1584. Min Cost to Connect All Points](./Questions/Medium_1/Medium_1.md)
+### [1584. Min Cost to Connect All Points](./Questions/Medium_1/Medium_1.md)
 
-[3112. Minimum Time to Visit Disappearing Nodes](./Questions/Medium_2/Medium_2.md)
+![1584. Min Cost to Connect All Points](./assets/details_medium_1.png)
 
-[1368. Minimum Cost to Make at Least One Valid Path in a Grid](./Questions/Hard_1/Hard_1.md)
 
-[778. Swim in Rising Water](./Questions/Hard_2/Hard_2.md)
+### [3112. Minimum Time to Visit Disappearing Nodes](./Questions/Medium_2/Medium_2.md)
+
+![3112. Minimum Time to Visit Disappearing Nodes](./assets/details_medium2.png)
+
+
+### [1368. Minimum Cost to Make at Least One Valid Path in a Grid](./Questions/Hard_1/Hard_1.md)
+
+![1368. Minimum Cost to Make at Least One Valid Path in a Grid](./assets/details_hard_1.png)
+
+
+### [778. Swim in Rising Water](./Questions/Hard_2/Hard_2.md)
+
+![778. Swim in Rising Water](./assets/details_hard2.png)
+
 
 ## Vídeos Explicando as Questões
 
-- **Questão Média 1:** [1584. Min Cost to Connect All Points](https://youtu.be/CHJT2zVBHEk)
+- ### Questão Média 1: [1584. Min Cost to Connect All Points](https://youtu.be/CHJT2zVBHEk)
 
-- **Questão Média 2:** [3112. Minimum Time to Visit Disappearing Nodes](https://youtu.be/mKC41ZRdx-o?si=SJjZ58UGsaENvHlu&t=2)
+- ### Questão Média 2: [3112. Minimum Time to Visit Disappearing Nodes](https://youtu.be/mKC41ZRdx-o?si=SJjZ58UGsaENvHlu&t=2)
 
-- **Questão Difícil 1:** [1368. Minimum Cost to Make at Least One Valid Path in a Grid](<!-- LINK DO VÍDEO -->)
+- ### Questão Difícil 1: [1368. Minimum Cost to Make at Least One Valid Path in a Grid](<!-- LINK DO VÍDEO -->)
 
-- **Questão Difícil 2:** [778. Swim in Rising Water](https://youtu.be/mKC41ZRdx-o?si=6LDgxcuA8GRPbRne&t=315)
+- ### Questão Difícil 2: [778. Swim in Rising Water](https://youtu.be/mKC41ZRdx-o?si=6LDgxcuA8GRPbRne&t=315)
