@@ -44,7 +44,7 @@ Tendo em vista a aplição do conteúdo Grafos 2 (que envolve a aprendizagem dos
 | Médio   | [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/description/)                                                 | Dart      |
 | Médio   | [3112. Minimum Time to Visit Disappearing Nodes](https://leetcode.com/problems/minimum-time-to-visit-disappearing-nodes/description/)                             | Java      |
 | Difícil | [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/description/) | Dart      |
-| Difícil | [NOME QUESTÃO AQUI](COLOCAR LINK DA QUESTÃO AQUI)                                                                                                                 | Java      |
+| Difícil | [NOME QUESTÃO AQUI](<!-- LINK DA QUESTÃO -->)                                                                                                                 | Java      |
 
 ## Uso 
 
@@ -74,10 +74,10 @@ Dispiníveis no `.md` de cada questão. Seguem os links:
 
 ## Vídeos Explicando as Questões
 
-- **Questão Média 1:** [1584. Min Cost to Connect All Points](COLOCAR LINK DO VÍDEO AQUI)
+- **Questão Média 1:** [1584. Min Cost to Connect All Points](https://youtu.be/CHJT2zVBHEk)
 
-- **Questão Média 2:** [3112. Minimum Time to Visit Disappearing Nodes](COLOCAR LINK DO VÍDEO AQUI)
+- **Questão Média 2:** [3112. Minimum Time to Visit Disappearing Nodes](<!-- LINK DO VÍDEO -->)
 
-- **Questão Difícil 1:** [1368. Minimum Cost to Make at Least One Valid Path in a Grid](COLOCAR LINK DO VÍDEO AQUI)
+- **Questão Difícil 1:** [1368. Minimum Cost to Make at Least One Valid Path in a Grid](<!-- LINK DO VÍDEO -->)
 
-- **Questão Difícil 2:** [Nome Questão](COLOCAR LINK DO VÍDEO AQUI)
+- **Questão Difícil 2:** [Nome Questão](<!-- LINK DO VÍDEO -->)
