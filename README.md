@@ -110,6 +110,6 @@ Os Links nos títulos levam ao `.md` com detalhes acerca da solução de cada qu
 
 - ### Questão Média 2: [3112. Minimum Time to Visit Disappearing Nodes](https://youtu.be/mKC41ZRdx-o?si=SJjZ58UGsaENvHlu&t=2)
 
-- ### Questão Difícil 1: [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://youtu.be/1jAT_2F0BrI)
+- ### Questão Difícil 1: [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://youtu.be/SkLZj7A3uxY)
 
 - ### Questão Difícil 2: [778. Swim in Rising Water](https://youtu.be/mKC41ZRdx-o?si=6LDgxcuA8GRPbRne&t=315)
